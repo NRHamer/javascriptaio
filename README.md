@@ -1,6 +1,10 @@
-# JavaScript All-In-One for Dummies
+# Using Data
 
-I'm learning JavaScript, React, Vue, Svelte, and Node from JavaScript All-In-One For Dummies by Chris Minnick
+## Making Variables with let
+
+Variables are names that represent values in a program.
+
+JavaScript has the let keyword for creating new variables.
 
 # Gamelet
 
@@ -55,7 +59,7 @@ parseFloat(10.01);
 
 One of the most common uses of parseInt and parseFloat is to convert strings to numbers. For example, if the user of your web app enters a number into a text field, that value is received by your program as a string.
 
-# Boolean Data Type
+## Boolean Data Type
 
 Boolean variables store one of two possible values: either true or false.
 
@@ -145,4 +149,129 @@ This code might be used to determine whether someone forgot to fill out a field 
 if(!city){
     alert('City is a required field.');
 }
+```
+
+## NaN data type
+
+NaN stands for Not a Number. NaN is what you get when you try to perform impossible mathematical operations or when you try to perform mathematical operations with strings.
+
+These are examples of operations that return NaN:
+
+Math operations where the result is not a real number, such as trying to calculate the square root of a negative number:
+
+```
+Math.sqrt(-1)
+```
+
+Attempting any mathematical operation involving a string, other than with the additional operator:
+
+```
+"yarn" / "cats"
+```
+
+Attempting to convert a string into a number:
+
+```
+parseInt("sandwich")
+```
+
+## Undefined data type
+
+Undefined is the default data type and value of a variable that's been declared but not initialised in JavaScript.
+
+It's also the value that will be returned by a statement or function that doesn't specifically return a value.
+
+You can see this default return value in action by entering a variable declaration into the JavaScript console in your browser. Whenever you run a JavaScript statement or expression in the console, JavaScript must return a value. If the statement you run doesn't specifically have a return value, the returned value is undefined.
+
+## Symbol data type
+
+The Symbol data type is used to create unique identifiers in JavaScript. Unlike the other data types, even if two symbols appear to be identical and have the same name, JavaScript guarantees that they'll be unique.
+
+```
+let symbol1 = Symbol("mysymbol");
+let symbol2 = Symbol("mysymbol");
+symbol1 === symbol2
+FALSE
+```
+
+## Wrangling the Object: The Complex Data Type
+
+In addition to its seven primitive data types, JavaScript also has a complex data type called 'object'.
+
+Objects are containers for related data and functionality.
+
+For example, an object called customerInfo might contain a name and an address and various other values related to a particular customer of a business.
+
+To make an object, place curly braces { } around a comma-seperated list of name:value pairs.
+
+For example
+
+```
+const customer = {
+    name: 'Laura Wigfall',
+    address: '3427 Crummit Lane',
+    city: 'Providence',
+    state: 'RI';
+    zipcode: '02905',
+    customerId: 4,
+    isInLoyaltyClub: true,
+};
+```
+
+The key things to notice about this object are:
+
+```
+The values inside an object (which are called properties) can be of any combination of the other data types. In fact, these values can be (and often are) objects themselves.
+
+This object was declared using const. Objects are commonly declared as constants. The result is that the object itself is unchangeable, though the values inside it can still be changed.
+```
+
+You can access the properties of an object by using what's called dot notation.
+
+```
+customer.zipcode
+02905
+```
+
+JavaScript returns the value of that property in response. You can use dot notation to create and change properties as well.
+
+## Examining the Array - a Special Kind of Object
+
+Arrays aren't primitive data types, but they aren't exactly objects, either.
+
+Arrays are used to store lists of items using a single name. The items inside an array are its 'elements', and the number you can use to access or modify elements is the 'index'.
+
+For example
+
+```
+const favouriteCities = [
+    'Rome',
+    'Berlin',
+    'New York',
+    'Paris',
+    'Astoria',
+];
+```
+
+You can now access the elements in an array by using the name of the array followed by square brackets containing the index position of the element you want.
+
+For example
+
+```
+favouriteCities[1];
+Berlin
+```
+
+## Getting a Handle on Scope
+
+The location where you declar a variable determines where your program can make use of that variable. This concept is called 'variable scope'.
+
+JavaScript has three kinds of variable scope:
+
+```
+Global-scoped variables can be used anywhere inside a program.
+
+Function-scoped variables can be used anywhere within the function where it was declared. Function scoped-variables are created using the var keyword.
+
+Block-scoped variables are variables created using the let or const keyword and initialized inside of a block. A block in JavaScript is a unit of code that starts with a left curly brace ({) and ends with a right curly brace (}). Block scoped variables can be used anywhere within the block where they are declared.
 ```
