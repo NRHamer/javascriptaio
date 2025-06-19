@@ -6,20 +6,23 @@ Variables are names that represent values in a program.
 
 JavaScript has the let keyword for creating new variables.
 
-# Gamelet
+## Declaring variables
 
-A starter program for writing JavaScript games.
+Creating a new variable is known as declaring a variable. To declare a variable using let, simply write the let keyword followed by what you want to name the variable, like this:
 
-## Usage
-
-1. Include gamelet.js in an HTML document containing an element with an id of 'ball'.
-
-```html
-<div id="ball">@</div>
-<script src='gamelet.js"/>
+```
+let phoneNumber;
 ```
 
-2. The script will detect when the left or right arrow keys are pressed and will move the ball element accordingly.
+This line creates a new empty variable named phoneNumber.
+
+Technically, a new declared variable isn't empty. JavaScript automatically assigns it a value of 'undefined'.
+
+Once you've declared a variable, you can assign it a value like this:
+
+```
+phoneNumber = '503-555-5555';
+```
 
 ## Template literal notation
 
