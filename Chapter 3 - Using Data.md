@@ -1,10 +1,12 @@
-# Using Data
+# Chapter 3 - Using Data
+
+# Variables
 
 ## Making Variables with let
 
 Variables are names that represent values in a program.
 
-JavaScript has the let keyword for creating new variables.
+JavaScript has the 'let' keyword for creating new variables.
 
 ## Declaring variables
 
@@ -24,7 +26,149 @@ Once you've declared a variable, you can assign it a value like this:
 phoneNumber = '503-555-5555';
 ```
 
+## Initializing Variables
+
+Assigning a value to a variable for the first time is called 'initializing a variable'. You can also combine the declaration and initializing of a variable into one statement, like this:
+
+```
+let favouriteColour = 'red';
+
+let seven = 7;
+let eight = 8;
+let sum = seven + eight;
+sum
+15
+```
+
+## Using Variables
+
+You can think of a variable as a box that holds a single item.
+
+This box may have a label that describes its contents, and the more descriptive the label is, the easier it is to know what should be kept in the box.
+
+Variables are typically named according to the purpose of the values they store.
+
+Constants are typically named in a way that identifies the exact value they store.
+
+```
+let lastName = 'Hamer';
+let firstName = 'Nick';
+let fullName = firstName + lastName;
+fullName
+'Nick Hamer'
+firstName = 'Richard';
+fullName
+'Nick Hamer'
+```
+
+# Constants
+
+## Making Constants with const
+
+Constants created using const work similarly to variables created with let, with one important difference:
+
+```
+Once declared, a constant can't be re-assigned.
+```
+
+Because a constant can't be assigned a new value after it's created, you must always declare and initialize a constant at the same time - for example:
+
+```
+const likesTacos = true;
+```
+
+Technically speaking, const doesn't create values that can't be changed ('immutable values') it creates a read-only reference to a value.
+
+What this means in practice is that if you assign a value to a const that includes other values, you can still change the inner values of the const - just not the value the const refers to.
+
+## When to use constants
+
+Anytime you have a value that you know won't change during the life of a program, and that you need to use more than once, you should make it a constant.
+
+# Data Types
+
+## Taking a Look at the Data Types
+
+Variables and constants all have two things in common: a value and a type.
+
+We've already seen examples of values. These are bits of data you want to store in the variable.
+
+A variable's data type is the kind of data a variable can hold. It's what determines whether 97103-4535 is a postal code or a mathematical operation.
+
+## JavaScript is loose and dynamic
+
+```
+Loose Language
+
+JavaScript is a loosely typed language. This means you can store any type of data in a variable or constant without having to tell JavaScript in advance the type of data you'll store in the variable.
+```
+
+```
+Dynamic Language
+
+JavaScript is also a dynamically typed language. This means that you can change the type of data stored in a variable. You might initialize a variable using a number but later store text in it.
+```
+
+To see a value's or variable's data type, you can use the typeof operator.
+
+```
+typeof "1"
+string
+
+typeof 0
+number
+
+typeof true
+boolean
+
+typeof "true"
+string
+
+typeof a
+undefined
+
+typeof "a"
+string
+```
+
+## Passing by value
+
+JavaScript has seven basic data types, which are known as the primitive data types.
+
+Primitive data types are passed by value.
+
+When you create a new variable from an existing variable, what's happening is that the value is that the value of the existing variable is copied to the new one.
+
+```
+let firstName = "Nick";
+let lastName = "Hamer";
+
+let fullName = firstName + ' ' + lastName;
+```
+
+When you create fullName, the values of firstName and lastName are copied and concatenated.
+
+If you change the values of firstName and lastName after fullName was created, fullName doesn't know about that, in the same way that a picture you take of someone doesn't change when they get a haircut.
+
+```
+let firstName = "Richard";
+fullName;
+"Nick Hamer"
+```
+
+## Escaping characters
+
+When you need to use double quotes in a double-quoted string, you can escape them by prefacing the offending symbol with a backslash ( \ ).
+
+```
+let famousQuote = "\"Nothing great was ever achieved without enthusiasm"\".
+```
+
 ## Template literal notation
+
+In additiona to single quotes and double quotes needing to be "escaped", several other special characters can't be used in a string unless you use an escape code.
+
+Template literals start and end with the backtick (`) character
 
 ```
 \` - Single quote
@@ -35,6 +179,18 @@ phoneNumber = '503-555-5555';
 \t - Tab
 \b - Backspace
 \f - Form feed
+```
+
+The useful thing about template literals is that you can include JavaScript expressions inside them by surrounding the expression with curly braces preceded by a dollar sign ($).
+
+The below example shows how to use a template literal string to compile a message to be displayed after someone places an order.
+
+```
+let orderTotal = 39.99;
+let itemPurchased = 'JavaScript All-In-One For Dummies';
+let customer = 'Joe Q. Developer';
+
+let thankYou = `${customer}, thank you for your order of ${itemPurchased}. Your payment of ${orderTotal} was successful.`;
 ```
 
 ## Work with Number Functions
