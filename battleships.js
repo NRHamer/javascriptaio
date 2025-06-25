@@ -86,6 +86,7 @@ const PositionY = [];
   }
  }
 */
+var firstRun = true;
 var playerFirstRun = true;
 var enemyFirstRun = true;
 let currentPlayer = 1;
@@ -125,7 +126,7 @@ class Player {
 }
 
 //Game Square Class
-class gameSquare {
+class GameSquare {
   constructor(Area, PNo) {
     this.Area = Area;
     this.PNo = PNo;
@@ -135,9 +136,7 @@ class gameSquare {
 /////////////////////////////////////
 
 function TIC() {
-  InitStuff();
-  if (playerFirstRun) playerInitStuff();
-  if (enemyFirstRun) enemyInitStuff();
+  if (firstRun) InitStuff();
 
   if (btn(0)) y--;
   if (btn(1)) y++;
@@ -219,32 +218,6 @@ function InitStuff() {
       }
     }
   }
-}
-
-//Player Initialization
-function playerInitStuff() {
-  GameBoards[0] = new gameBoard(0);
-  for (let i = 0; i < 81; i++) {
-    var gs = new gameSquare(
-      new area(new location(Position1X[i], PositionY[i], 20, 20), 0),
-      0
-    );
-    GameBoards[0].gameSquares.push(gs);
-  }
-  firstRun = false;
-}
-
-//Enemy Initialization
-function enemyInitStuff() {
-  GameBoards[1] = new gameBoard(1);
-  for (let i = 0; i < 81; i++) {
-    var gs = new gameSquare(
-      new area(new location(Position2X[i], PositionY[i], 20, 20), 0),
-      0
-    );
-    GameBoards[1].gameSquares.push(gs);
-  }
-  enemyFirstRun = false;
 }
 
 //Board 1 Grid

@@ -1,8 +1,6 @@
 # Chapter 3 - Using Data
 
-# Variables
-
-## Making Variables with let
+# Making Variables with let
 
 Variables are names that represent values in a program.
 
@@ -61,9 +59,7 @@ fullName
 'Nick Hamer'
 ```
 
-# Constants
-
-## Making Constants with const
+# Making Constants with const
 
 Constants created using const work similarly to variables created with let, with one important difference:
 
@@ -85,9 +81,7 @@ What this means in practice is that if you assign a value to a const that includ
 
 Anytime you have a value that you know won't change during the life of a program, and that you need to use more than once, you should make it a constant.
 
-# Data Types
-
-## Taking a Look at the Data Types
+# Taking a Look at the Data Types
 
 Variables and constants all have two things in common: a value and a type.
 
@@ -353,7 +347,7 @@ symbol1 === symbol2
 FALSE
 ```
 
-## Wrangling the Object: The Complex Data Type
+# Wrangling the Object: The Complex Data Type
 
 In addition to its seven primitive data types, JavaScript also has a complex data type called 'object'.
 
@@ -394,7 +388,7 @@ customer.zipcode
 
 JavaScript returns the value of that property in response. You can use dot notation to create and change properties as well.
 
-## Examining the Array - a Special Kind of Object
+# Examining the Array - a Special Kind of Object
 
 Arrays aren't primitive data types, but they aren't exactly objects, either.
 
