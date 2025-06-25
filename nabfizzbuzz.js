@@ -52,6 +52,8 @@ for (loop = 1; loop < 33; loop++) {
   if (loop % 5 == 0) {
     y += "Buzz";
   }
-
+  if (loop.toString().includes("2")) {
+    y = "Baz";
+  }
   console.log(loop + " " + y);
 }
