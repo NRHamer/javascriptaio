@@ -53,3 +53,62 @@ In HTML, the first tag, < script >, is to declare that the following script will
 The second way is to link a JavaScript file to the HTML file using the script tag at the head of the HTML page.
 
 ## Directly in HTML
+
+Here is how to write a very simple web page that will give a pop-up box saying 'Hi there!':
+
+```
+<html>
+  <script type = "text/javascript">
+    alert("Hi there!");
+  </script>
+</html>
+```
+
+Read now we have the content directly within our < html > tags. This is not best practice.
+
+We will need to create two elements inside < html > - < head > and < body >.
+
+In the head element, we write metadata and we also use this part later to connect external files to our HTML file.
+
+In the body, we have the content of the web page.
+
+We also need to let the browser know what kind of document we're working on with the < !DOCTYPE > declaration. Since we're writing JavaScript inside an HTML file, we need to use < !DOCTYPE html>. Here's an example.
+
+```
+<!DOCTYPE html>
+<html>
+
+<head>
+ <title>This goes in the tab of your browser </title>
+ </head>
+
+ <body>
+ The content of the webpage
+   <script>
+     console.log("Hi there!");
+   </script>
+ </body>
+</html>
+```
+
+## Linking an external file to our webpage
+
+You can also link an external file to the HTML file.
+
+This is considered better practice, as it organizes code better and you can avoid very lengthy HTML pages due to the JavaScript.
+
+In addition to these benefits, you can reuse the JavaScript on other web pages of your website without having to copy and paste.
+
+First create a seperate JavaScript file called 'JBP - External Alert.js'. The content will beL
+
+```
+alert("Saying hi from a different file");
+```
+
+Then we are going to create a seperate HTML file and give it this content:
+
+```
+<html>
+  <script type="text/javascript" src="External Alert.js"></script>
+</html>
+```
