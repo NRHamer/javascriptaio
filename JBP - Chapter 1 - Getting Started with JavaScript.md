@@ -112,3 +112,103 @@ Then we are going to create a seperate HTML file and give it this content:
   <script type="text/javascript" src="External Alert.js"></script>
 </html>
 ```
+
+# Writing JavaScript code
+
+## Indentations and whitespace
+
+When writing code, often a line of code belongs to a certain code block (code between two curly backets) or parent statement. You can use indentations to make reading code easier. For example:
+
+```
+let status = "new"; let scared = true; if (status === "new") {console.log("Welcome to JavaScript!"); if (scared) {console.log("Don't worry you will be fine!");} else {console.log("You're brave! You are going to do great!");}} else {console.log("Welcome back, I knew you'd like it!");}
+```
+
+With lines and indentation this becomes:
+
+```
+let status = "new";
+let scared = true;
+if (status === "new"){
+  console.log("Welcome to JavaScript!");
+  if (scared){
+    console.log("Don't worry you will be fine!");
+  } else {
+    console.log("You're brave! You are going to do great!");
+  }
+} else {
+  console.log("Welcome back, I knew you'd like it!");
+}
+```
+
+## Semicolons
+
+After every statement, you should insert a semicolon.
+
+When you declare a code block, such as an if statement or loop, you should not end with a semicolon. It is only for the seperate statements.
+
+## Code comments
+
+You can add comments to code. This can be done for a number of reasons:
+
+1. You do not want to execute a piece of code while running the script, so you comment it out so it gets ignored by the interpreter.
+
+2. Metadata. Adding some context to the code.
+
+3. Adding comments to specific parts of the code to explain what is happening or why a certain choice has been made.
+
+There are two ways to do this.
+
+```
+// use double foward slashes for single line comments
+
+/* Use
+an asterisk and
+a forward slash
+for multiple line comments
+*/
+```
+
+## Prompt
+
+A command prompt works very much like an alert, but instead, it takes input from the user.
+We will learn how to store variables very soon, and once you know that, you can store the result of this prompt function and do something with it.
+
+Open the Hi.html document and change the alert() to a prompt().
+
+Now you get a popup with an input box in which you can enter text. The value you enter will be returned to the script, and can be used in your code. This is great for getting user input to shape the way your code works.
+
+## Random numbers
+
+The command to create a random number is:
+
+```
+Math.random();
+```
+
+We can use it in the console and see the result appear if we log it:
+
+```
+console.log(Math.random());
+```
+
+This number will be a decimal between 0 and 1. If we want a number between 0 and 100, we can multiply it by 100, like this:
+
+```
+console.log(Math.random()*100);
+```
+
+If you don't want to have a decimal result, we can use the Math.floor function on it, which is rounding it doen to the nearest integer:
+
+```
+console.log(Math.floor(Math.random()*100));
+```
+
+# Chapter Project
+
+## Creating an HTML file and a linked JavaScript file
+
+Create an HTML file and create a seperate JavaScript file. Then, connect to the JavaScript file from the HTML file.
+
+1. In the JavaScript file, output your name in the console and add a multiple line comment to your code.
+
+2. Try commenting out the console message in your JavaScript file so that nothing shows in the console.
