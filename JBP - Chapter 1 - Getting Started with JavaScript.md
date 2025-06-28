@@ -212,3 +212,27 @@ Create an HTML file and create a seperate JavaScript file. Then, connect to the 
 1. In the JavaScript file, output your name in the console and add a multiple line comment to your code.
 
 2. Try commenting out the console message in your JavaScript file so that nothing shows in the console.
+
+## Self-check quiz
+
+1. What is the HTML syntax to add an external JavaScript file?
+
+```
+< script type="type/javascript" src="Insertfilenamehere.js" > < /script >
+```
+
+2. Can you run JavaScript in a file with a JS extension in your browser?
+
+Yes.
+
+3. How do you write a multiple-line comment in JavaScript?
+
+```
+*/
+Use asterisk and forward slashes
+/*
+```
+
+4. What is the best way to remove a line of code from running that you might want to keep as you debug?
+
+Comment it out using // for a single line and _/ and _/ for multiple lines.
