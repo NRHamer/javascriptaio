@@ -374,3 +374,95 @@ false boolean
 ```
 
 This output shows that any string will return true when converted to a Boolean, even the string "false"! Only an empty string, null, and undefined will lead to a Boolean value of false.
+
+# Operators
+
+Arithmetic operators can be used to perform operations with numbers.
+
+## Addition
+
+The addition simple can be used to concetenate strings.
+
+```
+let str1 = "Hello ";
+let str2 = "addition";
+let result2 = str1 + str2;
+```
+
+The output will be as follows:
+
+```
+Hello addition
+```
+
+## Subtraction
+
+Here is an example of how subtraction works:
+
+```
+let nr1 = 20
+let nr2 = 4;
+let str1 = "Hi";
+let nr3 = 3;
+let result1 = nr1 -nr2;
+let result2 = str1 - nr3;
+console.log(result1, result2);
+```
+
+The output is as follows:
+
+```
+16 NaN
+```
+
+The first result is 16. The second is more interesting. It gives NaN, not an error, but simply the conclusion that a work and a number subtracted are not a number.
+
+## Multiplication
+
+As with subtration, the result of multiplying and number with a string in JavaScript is NaN.
+
+## Division
+
+Another straightforward opertor is division.
+
+## Exponentiation
+
+Exponentiation means raising a certain base number to the power of the exponent, by example, x^y. This means that we multiply x by itself y number of times. Here is an example of how to do this is JavaScript - we use \*\* for this operator:
+
+```
+let nr1 = 2;
+let nr2 = 3;
+let result1 = nr1 ** nr2;
+console.log(result1);
+```
+
+Bear in mind the square root of a value is the same as raising it to the power of 0.5.
+
+## Modulus
+
+Modulus is the operation in which you determine how much is left after dividing a number by another number in its entirety. The amount will be the remainder, or what is left over. The character we use for this operation is the % character. Here are some examples:
+
+```
+let nr1 = 10;
+let nr2 = 3;
+let result1 = nr1 % nr2;
+console.log(`${nr1}%${nr2} = ${result1}`);
+
+let nr3 = 8;
+let nr4 = 2;
+let result2 = nr3 % nr4;
+console.log(`${nr3}%${nr4} = ${result2}`);
+
+let nr5 = 15;
+let nr6 = 4;
+let result3 = nr5 % nr6;
+console.log(`${nr5}%${nr6} = ${result3}`);
+```
+
+And the output:
+
+```
+10 % 3 = 1
+8 % 2 = 0
+15 % 4 = 3
+```

@@ -61,3 +61,16 @@ console.log(strToBool2, typeof strToBool2);
 let strToBool3 = "";
 strToBool3 = Boolean(strToBool3);
 console.log(strToBool3, typeof strToBool3);
+//Demonstrating subtraction
+let nr3 = 20;
+let nr4 = 4;
+let str8 = "Hi";
+let nr5 = 3;
+let result1 = nr3 - nr4;
+let result2 = str8 - nr5;
+console.log(result1, result2);
+//Demonstrating exponentiation
+let nr6 = 2;
+let nr7 = 3;
+let result3 = nr6 ** nr7;
+console.log(result3);
