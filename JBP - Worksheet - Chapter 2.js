@@ -74,3 +74,31 @@ let nr6 = 2;
 let nr7 = 3;
 let result3 = nr6 ** nr7;
 console.log(result3);
+//Demonstrating increment operator
+let nr8 = 4;
+nr8++;
+console.log(nr8);
+//Demonstrating decrement operator
+let nr9 = 4;
+console.log(nr9--);
+//Demonstrating postfix increment
+let nr10 = 5;
+console.log(nr10++);
+console.log(nr10);
+//Demonstrating prefix increment
+let nr11 = 5;
+console.log(++nr11);
+//Unary operator test
+let nr12 = 4;
+let nr13 = 5;
+let nr14 = 2;
+console.log(nr12++ + ++nr13 * nr14++);
+//Demonstrating multiple operations
+let x = 2;
+x += 2;
+x -= 2;
+x *= 6;
+x /= 3;
+x **= 2;
+x %= 3;
+console.log(x);

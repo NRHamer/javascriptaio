@@ -466,3 +466,273 @@ And the output:
 8 % 2 = 0
 15 % 4 = 3
 ```
+
+This can be used for time calculations. If you wanted to add 125 minutes to the current time you could use 125 % 60 to conclude that you need to add 2 hours and 5 minutes to the current time.
+
+## Unary operators: increment and decrement
+
+The last two operators of our arithmetic operator section are increment and decrement.
+
+A term we use here is operand. Operands are subject to the operator. So, if we say x + y, x and y are the operands.
+
+If we see x++, we can read this as x = x + 1.
+
+If we see x--, we can read this as x = x - 1:
+
+```
+let nr1 = 4;
+nr1++;
+console.log(nr1);
+
+let nr2 = 4;
+nr2--;
+console.log(nr2);
+```
+
+The output is as follows:
+
+```
+5
+3
+```
+
+## Prefix and postfix operators
+
+We can have the increment operator after the operand (x++) in which case we call this the postfix unary operator.
+
+We can have it before (++x), which is the prefix unary operator. This does something different.
+
+The postfix gets executed after sending the variable though, and then after that, the operation gets executed. In the following example, nr gets incremented by 1 AFTER logging. So the first logging statement is still logging the old value because it has not been updated yet. It has been updated from the second log statement:
+
+```
+let nr = 2;
+console.log(nr++);
+console.log(nr);
+```
+
+The output is as follows:
+
+```
+2
+3
+```
+
+The prefix gets executed BEFORE sending the variable through, and often this is the one you will need. Have a look at the follwoing example:
+
+```
+let nr = 2;
+console.log(++nr);
+```
+
+We get the following output:
+
+```
+3
+```
+
+## Combining the operators
+
+You can combine operators. This creates precedence, that may not necessarily read from left to right.
+
+Name Symbol Example
+Grouping (brackets) (...) (x + y)
+Exponentiation ** x ** y
+Prefix increment and decrement --, ++ --x, ++y
+Multiplication, division, modulus _, /, % x _ y, x / y, x % y
+Addition and subtraction +, - x + y, x - y
+
+## Assignment operators
+
+The basic assignment operator is =.
+
+There are a few others available. Every binary arithmetic operator has a corresponding assignment operator to write a shorter piece of code.
+
+For example, x+= 5 means x = x + 5, and x**= 3 means x = x ** 3.
+
+Here are a few more examples:
+
+```
+let x = 2;
+x += 2;
+```
+
+After this assignment operation, the vale of x becomes 4.
+
+```
+x -= 2;
+```
+
+After this operation the value of x becomes 2 again.
+
+```
+x *= 6;
+```
+
+When this line has been executed, the value of x becomes 12.
+
+```
+x /= 3;
+```
+
+After dividing by 3 the new value becomes 4.
+
+```
+x **= 2;
+```
+
+The value of x become 16.
+
+```
+x %= 3;
+```
+
+After this assignment operation, the value of x is 1.
+
+# Comparison operators
+
+Comparison operators are different from the operators we have seen so far. The outcome of the comparison operators is always a Boolean, true, or false.
+
+## Equal
+
+There are a few equality operators that determine whether two values are equal.
+
+They come in two flavours: equals value only, or equal value and data type.
+
+The first one returns true when the values are equal, even though the type is different, while the second returns true only when the value and the type are the same.
+
+```
+let x = 5;
+let y = "5";
+console.log(x == y);
+```
+
+The double equals operator, two equal signs, means that it will only check for equal value. Both have the value 5, so it will log:
+
+```
+true
+```
+
+This type of equality is sometimes called loose equality.
+
+The triple equals operator, written as three equal signs, means that it will evaulate both the value and the data type to determine whether both sides are equal or not. They both need to be equal in order for this statement to be true. In this example,
+
+```
+console.log(x === y);
+```
+
+Gives the result:
+
+```
+false
+```
+
+This is sometimes also called strict equality. This triple equals operator is the one you should most commonly be using when you need to check for equality, as only with this one can you be sure that both variable are really equal.
+
+## Not equal
+
+Not equal is very similar to equal, except it does the opposite = it returns true when two variables are not equal, and false when they are equal.
+
+We use the exclamation mark for not equal:
+
+```
+let x = 5;
+let y = "5";
+console.log(x != y);
+```
+
+This will give the result:
+
+```
+false
+```
+
+This is because with a single equals sign the console is checking if the two values loosely match, which they do, and therefore with a not equals operator this returns a false value.
+
+However, when there are two equals signs the console is checking for strict non-equality:
+
+```
+console.log(x !== y);
+```
+
+This will conclude that since x and y have different data types, they are not the same, and will log
+
+```
+true
+```
+
+# Logical operators
+
+Whenever you want to check two conditions in one, or you need to negate a condition, the logical operators come in handy.
+
+You can use and, or, and not.
+
+## And
+
+If you want to check whether x is greater than y and y is greater than z, you would need to be able to combine two expressions.
+
+This can be done with the && operator.
+
+It will only return true if both expressions are true:
+
+```
+let x = 1;
+let y = 2;
+let z = 3;
+```
+
+With these variables in mind, we are going to have a look at the logical operators.
+
+```
+console.log(x < y %% y < z);
+```
+
+This will log true.
+
+```
+console.log(x > y && y < z);
+```
+
+This will log false.
+
+## Or
+
+If you want to get true if either one of the expressions is true, you use or.
+
+The operator for this is ||.
+
+These pipes are used to see if either one of these two is true, in which case the whole expression evaluates to true.
+
+```
+console.log(x > y || x < z);
+```
+
+This will result in true, whereas it was false with &&.
+
+When both sides are false, it will log false, for example:
+
+```
+console.log(x > y || y > z);
+```
+
+## Not
+
+In some cases you will have to negate a Boolean. This will make it the opposite value.
+
+It can be done with the exclamation mark, which reads as not:
+
+```
+let x = false;
+console.log(!x);
+```
+
+This will log true, since it will simply flip the value of the Boolean.
+
+You can also negate an expression that evaluates to a Boolean, but you would have to make sure that the expression gets evaluated first by grouping it.
+
+```
+let x = 1;
+let y = 2;
+console.log(!(x < y));
+```
+
+x is smalled than y, so the expression evaluates to true. But, it gets negated due to the exclamation mark and prints false to the console.
